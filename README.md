@@ -61,8 +61,24 @@ In terms of Linux Security, SUID plays a major role. It can grant or deny access
 <br />
 
 <h2>SUDO:</h2>
-A binary is set with SUID to allow a regular user to access classified data. To do this, terminal is first logged in under our regular user:<br/>
-<img src="https://imagizer.imageshack.com/img924/6914/TBdIPc.png" alt="Disk Sanitization Steps"/>
+The new user will be provided with the ability to use high-level permissions in the system. This will allow the user to perform sensitive operations without having to switch to the root user. First, the root user is accessed and apt update is executed:<br/>
+<img src="https://imagizer.imageshack.com/img922/9271/1K7Dr5.png" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+Then, apt install sudo -y is run:<br/>
+<img src="https://imagizer.imageshack.com/img922/1926/iUNzwK.png" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+The command visudo is then executed to open and edit the sudoers file:<br/>
+<img src="https://imagizer.imageshack.com/img923/8105/H75pS6.png" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+After scrolling to the bottom, the following text string is entered underneath the root user:<br/>
+<img src="https://imagizer.imageshack.com/img922/4153/txXUkq.png" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+The sudo cat command is run on /etc/shadow to verify that the John user was added to the sudoers list. A password is prompted:<br/>
+<img src="https://imagizer.imageshack.com/img923/6517/uijTNi.png" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 
